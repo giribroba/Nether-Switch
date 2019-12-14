@@ -9,7 +9,8 @@ public class ShipBehaviour : MonoBehaviour
     private Animator _animator;
     private Rigidbody2D rbPlayer;
     private bool anguloDireita, anguloRaycast, colidiu;
-    Collider2D[] colididos, colididosClone;
+    Collider2D[] colididos;
+
     private string botaoPrincipal;
     [SerializeField] private LayerMask lm;
     private Vector3 soma;
@@ -32,12 +33,7 @@ public class ShipBehaviour : MonoBehaviour
         colididos = Physics2D.OverlapCircleAll(transform.position + soma, raioRC, lm);
         colidiu = colididos.Length > 1;
         _animator.SetBool("EncontrouParede", colidiu);
-        if (colidiu)
-        {
-            rbPlayer.velocity = new Vector3(rbPlayer.velocity.x, 0);
-        }
-        else if(!colidiu)
-            rbPlayer.velocity = new Vector3(rbPlayer.velocity.x , anguloDireita ? velocidade : -velocidade);
+        rbPlayer.velocity = new Vector3(rbPlayer.velocity.x , anguloDireita ? velocidade : -velocidade);
         if (Input.inputString.ToUpper() == botaoPrincipal && colidiu)
         {
             _animator.SetTrigger("ApertouZ");
