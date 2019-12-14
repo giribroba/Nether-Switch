@@ -12,10 +12,4 @@ public class GameController : MonoBehaviour
             navios[i].SetActive(TelaSelecao.teclasEscolhidas.ContainsKey(i));
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

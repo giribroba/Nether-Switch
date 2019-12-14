@@ -33,6 +33,12 @@ public class funButtons : MonoBehaviour
         Canvas[1].SetActive(false);
     }
 
+    private void Update()
+    {
+        if (Input.anyKeyDown && !Input.GetMouseButton(0) && !Input.GetMouseButton(1) && !Input.GetMouseButton(2) && index == 0)
+            IrSel();
+    }
+
     IEnumerator TransPraia(int caso)
     {
         switch (caso)
