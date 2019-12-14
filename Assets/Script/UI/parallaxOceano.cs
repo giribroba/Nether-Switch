@@ -16,6 +16,6 @@ public class parallaxOceano : MonoBehaviour
     private void Update()
     {
         parallaxValor += parallaxAdicao;
-        sr.material.SetTextureOffset("_MainTex", new Vector2(parallaxValor, 0f));   
+        sr.material.SetTextureOffset("_MainTex", new Vector2(-parallaxValor, 0f));   
     }
 }
