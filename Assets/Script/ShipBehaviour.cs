@@ -8,8 +8,8 @@ public class ShipBehaviour : MonoBehaviour
     public int index;
     private Animator _animator;
     private Rigidbody2D rbPlayer;
-    private bool anguloDireita, executar, anguloRaycast, colidiu;
-    Collider2D[] colididos;
+    private bool anguloDireita, anguloRaycast, colidiu;
+    Collider2D[] colididos, colididosClone;
     private string botaoPrincipal;
     [SerializeField] private LayerMask lm;
     private Vector3 soma;
@@ -32,18 +32,18 @@ public class ShipBehaviour : MonoBehaviour
         colididos = Physics2D.OverlapCircleAll(transform.position + soma, raioRC, lm);
         colidiu = colididos.Length > 1;
         _animator.SetBool("EncontrouParede", colidiu);
-        rbPlayer.velocity = new Vector3(rbPlayer.velocity.x , anguloDireita ? velocidade : -velocidade);
-        if (Input.inputString.ToUpper() == botaoPrincipal && executar && colidiu)
+        if (colidiu)
+        {
+            rbPlayer.velocity = new Vector3(rbPlayer.velocity.x, 0);
+        }
+        else if(!colidiu)
+            rbPlayer.velocity = new Vector3(rbPlayer.velocity.x , anguloDireita ? velocidade : -velocidade);
+        if (Input.inputString.ToUpper() == botaoPrincipal && colidiu)
         {
             _animator.SetTrigger("ApertouZ");
-            executar = false;
             anguloRaycast = !anguloRaycast;
             _animator.SetBool("IndoPraBaixo", !anguloRaycast);
             anguloDireita = !anguloDireita;
-        }
-        else
-        {
-            executar = true;
         }
     }
     
