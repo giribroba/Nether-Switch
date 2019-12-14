@@ -17,6 +17,7 @@ public class funButtons : MonoBehaviour
 
     public void IrMenu()
     {
+        TelaSelecao.ZeraTeclas();
         index = 0;
         StartCoroutine(TransPraia(1));
     }

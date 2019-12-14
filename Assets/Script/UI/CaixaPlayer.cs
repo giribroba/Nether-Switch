@@ -25,10 +25,10 @@ public class CaixaPlayer : MonoBehaviour
         {
             if (Input.inputString != "")
             {
-                if (verificadorDeTeclas(Input.inputString))
+                if (verificadorDeTeclas(Input.inputString.Substring(0,1)))
                 {
-                    portaTeclas.Add(Input.inputString);
-                    txt_teclaEscolhida.text = Input.inputString.ToUpper();
+                    portaTeclas.Add(Input.inputString.Substring(0,1));
+                    txt_teclaEscolhida.text = Input.inputString.Substring(0,1).ToUpper();
                     escolhendoTecla = false;
                     podeSelecionar = true;
                 }

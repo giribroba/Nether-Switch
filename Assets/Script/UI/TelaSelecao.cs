@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class TelaSelecao : MonoBehaviour
 {
-    private GameObject[] players;
+    private static GameObject[] players;
     float tempo;
     public static Dictionary<int, string> teclasEscolhidas = new Dictionary<int, string>();
 
@@ -21,12 +21,21 @@ public class TelaSelecao : MonoBehaviour
         StartCoroutine("Esperar", cena);
 
     }
-        IEnumerator Esperar(string cena)
+    public static void ZeraTeclas()
+    {
+        players = GameObject.FindGameObjectsWithTag("Caixa");
+        CaixaPlayer.portaTeclas = new List<string>();
+        foreach (var i in players)
         {
-            UI ui = this.GetComponent<UI>();
-            tempo = 2;
-            ui.Fades(false, tempo, Random.Range(0, 2));
-            yield return new WaitForSeconds(tempo);
-            SceneManager.LoadScene(cena);
+            i.GetComponent<CaixaPlayer>().ativado = false;
         }
+    }
+    IEnumerator Esperar(string cena)
+    {
+        UI ui = this.GetComponent<UI>();
+        tempo = 2;
+        ui.Fades(false, tempo, Random.Range(0, 2));
+        yield return new WaitForSeconds(tempo);
+        SceneManager.LoadScene(cena);
+    }
 }
