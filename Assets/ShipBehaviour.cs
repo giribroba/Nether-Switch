@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShipBehaviour : MonoBehaviour
 {
     [SerializeField]private float velocidade, raioRC, distCentro;
+    private Animator _animator;
     private Rigidbody2D rbPlayer;
     private bool anguloDireita, executar, colidiu, anguloRaycast;
     private string botaoPrincipal;
@@ -15,14 +16,15 @@ public class ShipBehaviour : MonoBehaviour
     void Start()
     {
         botaoPrincipal = "A";
-        rbPlayer = GetComponent<Rigidbody2D>();    
+        rbPlayer = GetComponent<Rigidbody2D>();
+        _animator = transform.GetChild(0).GetComponent<Animator>();
     }
 
     void Update()
     {
         Movimento();
     }
-    public void Movimento()
+    private void Movimento()
     {
         soma.y = (anguloRaycast) ? distCentro : -distCentro;
         colidiu = Physics2D.OverlapCircle(transform.position + soma, raioRC, lm);
@@ -39,6 +41,7 @@ public class ShipBehaviour : MonoBehaviour
         }
 
     }
+    
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position + soma, raioRC);
