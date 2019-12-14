@@ -5,16 +5,19 @@ using UnityEngine;
 public class ShipBehaviour : MonoBehaviour
 {
     [SerializeField]private float velocidade, raioRC, distCentro;
+    public int index;
     private Animator _animator;
     private Rigidbody2D rbPlayer;
-    private bool anguloDireita, executar, colidiu, anguloRaycast;
+    private bool anguloDireita, executar, anguloRaycast, colidiu;
+    Collider2D[] colididos;
     private string botaoPrincipal;
     [SerializeField] private LayerMask lm;
     private Vector3 soma;
     private Ray r;
     void Start()
     {
-        botaoPrincipal = "A";
+        
+        botaoPrincipal = TelaSelecao.teclasEscolhidas[index];
         rbPlayer = GetComponent<Rigidbody2D>();
         _animator = transform.GetChild(0).GetComponent<Animator>();
     }
@@ -26,8 +29,8 @@ public class ShipBehaviour : MonoBehaviour
     private void Movimento()
     {
         soma.y = (anguloRaycast) ? distCentro : -distCentro;
-        colidiu = Physics2D.OverlapCircle(transform.position + soma, raioRC, lm);
-        _animator.SetBool("EncontrouParede", colidiu);
+        colididos = Physics2D.OverlapCircleAll(transform.position + soma, raioRC, lm);
+        colidiu = colididos.Length > 1;
         rbPlayer.velocity = new Vector3(rbPlayer.velocity.x , anguloDireita ? velocidade : -velocidade);
         if (Input.inputString.ToUpper() == botaoPrincipal && executar && colidiu)
         {

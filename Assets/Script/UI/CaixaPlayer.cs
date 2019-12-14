@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class CaixaPlayer : MonoBehaviour
 {
     [SerializeField] private GameObject botaoTrue, obj_teclaEscolhida;
+    [SerializeField] private Text txt_feedback;
+    public int id;
     public Text txt_teclaEscolhida;
     public bool ativado = false;
     private bool escolhendoTecla = false;
@@ -18,6 +20,7 @@ public class CaixaPlayer : MonoBehaviour
 
     void Update()
     {
+        txt_feedback.text = (!podeSelecionar? "Escolha uma tecla": "");
         if (escolhendoTecla)
         {
             if (Input.inputString != "")
@@ -40,7 +43,6 @@ public class CaixaPlayer : MonoBehaviour
         if (!ativado && txt_teclaEscolhida.text != "...")
         {
             portaTeclas.Remove(txt_teclaEscolhida.text.ToLower());
-            podeSelecionar = false;
             txt_teclaEscolhida.text = "...";
         }
         botaoTrue.GetComponent<Image>().color = (ativado ? Color.green : Color.red);
@@ -69,10 +71,26 @@ public class CaixaPlayer : MonoBehaviour
 
     public void Ativar()
     {
-        if (!ativado)
+        print(podeSelecionar);
+        if (podeSelecionar)
         {
-            escolhendoTecla = true;
+            if (!ativado)
+            {
+                ativado = true;
+                escolhendoTecla = true;
+                podeSelecionar = false;
+            }
+            else if (ativado)
+            {
+
+                ativado = false;
+                podeSelecionar = true;
+            }
         }
-        ativado = !ativado;
+        else if(ativado)
+        {
+            ativado = false;
+            podeSelecionar = true;
+        }
     }
 }
