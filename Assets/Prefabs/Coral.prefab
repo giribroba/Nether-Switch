@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5177353893223121232}
   - component: {fileID: 3798327141778876542}
   - component: {fileID: -1923369893318354514}
-  m_Layer: 0
-  m_Name: Circle
+  m_Layer: 8
+  m_Name: Coral
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,12 +70,16 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< HEAD:Assets/Prefabs/Coral.prefab
+  m_Sprite: {fileID: 21300000, guid: aebcf6288574c1f44b715e26a6da7539, type: 3}
+=======
   m_Sprite: {fileID: 21300000, guid: f1d39946451c8f24bbb0aa7ff82ac2e5, type: 3}
+>>>>>>> 46b2a04d5cc61e52d556ea621eedd2c968f9c8df:Assets/Prefabs/Circle.prefab
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -98,8 +102,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD:Assets/Prefabs/Coral.prefab
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 1, y: 1}
+=======
     oldSize: {x: 1, y: 1}
     newSize: {x: 0.32, y: 0.32}
+>>>>>>> 46b2a04d5cc61e52d556ea621eedd2c968f9c8df:Assets/Prefabs/Circle.prefab
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0

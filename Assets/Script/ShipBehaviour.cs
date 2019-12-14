@@ -15,8 +15,8 @@ public class ShipBehaviour : MonoBehaviour
     private Vector3 soma;
     private Ray r;
     void Start()
+
     {
-        
         botaoPrincipal = TelaSelecao.teclasEscolhidas[index];
         rbPlayer = GetComponent<Rigidbody2D>();
         _animator = transform.GetChild(0).GetComponent<Animator>();
@@ -31,6 +31,7 @@ public class ShipBehaviour : MonoBehaviour
         soma.y = (anguloRaycast) ? distCentro : -distCentro;
         colididos = Physics2D.OverlapCircleAll(transform.position + soma, raioRC, lm);
         colidiu = colididos.Length > 1;
+        _animator.SetBool("EncontrouParede", colidiu);
         rbPlayer.velocity = new Vector3(rbPlayer.velocity.x , anguloDireita ? velocidade : -velocidade);
         if (Input.inputString.ToUpper() == botaoPrincipal && executar && colidiu)
         {

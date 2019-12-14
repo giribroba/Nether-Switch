@@ -49,6 +49,7 @@ public class funButtons : MonoBehaviour
                     anim.SetBool("transPraiaF", false);
                     Canvas[0].SetActive(false);
                     Canvas[1].SetActive(true);
+                    index = 1;
                 break;
             
             case 1:
@@ -57,6 +58,7 @@ public class funButtons : MonoBehaviour
                 anim.SetBool("transPraiaF", false);
                 Canvas[0].SetActive(true);
                 Canvas[1].SetActive(false);
+                index = 0;
                 break;
 
         }

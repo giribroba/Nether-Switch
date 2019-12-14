@@ -18,15 +18,15 @@ public class TelaSelecao : MonoBehaviour
             if (temp.ativado)
                 teclasEscolhidas.Add(temp.id, temp.txt_teclaEscolhida.text);
         }
-        StartCoroutine("Esperar");
+        StartCoroutine("Esperar", cena);
 
     }
-        IEnumerator Esperar()
+        IEnumerator Esperar(string cena)
         {
             UI ui = this.GetComponent<UI>();
             tempo = 2;
             ui.Fades(false, tempo, Random.Range(0, 2));
             yield return new WaitForSeconds(tempo);
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene(cena);
         }
 }
