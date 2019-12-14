@@ -27,6 +27,6 @@ public class TelaSelecao : MonoBehaviour
             tempo = 2;
             ui.Fades(false, tempo, Random.Range(0, 2));
             yield return new WaitForSeconds(tempo);
-        SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("SampleScene");
         }
 }
