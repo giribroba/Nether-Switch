@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
@@ -10,6 +8,7 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < navios.Length; i++)
         {
             navios[i].SetActive(TelaSelecao.teclasEscolhidas.ContainsKey(i));
+            navios[i].layer = 8;
         }
     }
 }
