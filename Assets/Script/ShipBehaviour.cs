@@ -12,7 +12,6 @@ public class ShipBehaviour : MonoBehaviour
     [SerializeField] private LayerMask lm;
     private Vector3 soma;
     private Ray r;
-
     void Start()
     {
         botaoPrincipal = "A";
@@ -28,11 +27,14 @@ public class ShipBehaviour : MonoBehaviour
     {
         soma.y = (anguloRaycast) ? distCentro : -distCentro;
         colidiu = Physics2D.OverlapCircle(transform.position + soma, raioRC, lm);
+        _animator.SetBool("EncontrouParede", colidiu);
         rbPlayer.velocity = new Vector3(rbPlayer.velocity.x , anguloDireita ? velocidade : -velocidade);
         if (Input.inputString.ToUpper() == botaoPrincipal && executar && colidiu)
         {
+            _animator.SetTrigger("ApertouZ");
             executar = false;
             anguloRaycast = !anguloRaycast;
+            _animator.SetBool("IndoPraBaixo", !anguloRaycast);
             anguloDireita = !anguloDireita;
         }
         else
@@ -41,6 +43,7 @@ public class ShipBehaviour : MonoBehaviour
         }
 
     }
+    
     
     private void OnDrawGizmos()
     {
