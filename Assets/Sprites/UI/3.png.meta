@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ee3c0504ed4f1854eb930260587a8f51
+guid: 8507a47377ffc5d4a8988d7c93e6c29b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,54 +34,20 @@ TextureImporter:
     filterMode: 0
     aniso: -1
     mipBias: -100
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     wrapU: 1
     wrapV: 1
     wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
-=======
-=======
->>>>>>> 46b2a04d5cc61e52d556ea621eedd2c968f9c8df
-=======
->>>>>>> 46b2a04d5cc61e52d556ea621eedd2c968f9c8df
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
-  nPOTScale: 0
-  lightmap: 0
-  compressionQuality: 50
   spriteMode: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 8cf17ae75cf7bceca1b6dc5dbf0a0f9bfad2339e
-=======
->>>>>>> 46b2a04d5cc61e52d556ea621eedd2c968f9c8df
-=======
->>>>>>> 46b2a04d5cc61e52d556ea621eedd2c968f9c8df
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   spriteGenerateFallbackPhysicsShape: 1
-=======
-  spriteGenerateFallbackPhysicsShape: 0
->>>>>>> 8cf17ae75cf7bceca1b6dc5dbf0a0f9bfad2339e
-=======
-  spriteGenerateFallbackPhysicsShape: 0
->>>>>>> 46b2a04d5cc61e52d556ea621eedd2c968f9c8df
-=======
-  spriteGenerateFallbackPhysicsShape: 0
->>>>>>> 46b2a04d5cc61e52d556ea621eedd2c968f9c8df
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -106,18 +72,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
