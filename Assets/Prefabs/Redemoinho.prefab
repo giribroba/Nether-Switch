@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 657153256632391325}
   - component: {fileID: 657153256632391326}
   - component: {fileID: 657153256632391327}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: fora
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657153256632391323}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6635518, y: 0.28318462, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 657153257608318230}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 657153257608318230}
   - component: {fileID: 6741115479694831746}
   - component: {fileID: 7655250066302426830}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Redemoinho
   m_TagString: ciclone
   m_Icon: {fileID: 0}
@@ -140,9 +140,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657153257608318229}
-  m_LocalRotation: {x: -0, y: -0, z: 0.99986327, w: -0.01653596}
+  m_LocalRotation: {x: 0, y: -0, z: 0.99986327, w: -0.016536728}
   m_LocalPosition: {x: 10.86, y: -1.92, z: 0.27229}
-  m_LocalScale: {x: 2.6824, y: 2.6824, z: 2.6824}
+  m_LocalScale: {x: 1.188794, y: 1.188794, z: 1.188794}
   m_Children:
   - {fileID: 657153257721508935}
   - {fileID: 657153256632391324}
@@ -162,7 +162,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.6512136, y: 0.26559058}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 657153257721508952}
   - component: {fileID: 657153257721508953}
   - component: {fileID: 657153257721508954}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: dento
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657153257721508934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6635292, y: 0.2831714, z: -0.9999998}
+  m_LocalPosition: {x: 0, y: 0, z: -0.9999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 657153257608318230}
