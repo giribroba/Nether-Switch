@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ShipBehaviour : MonoBehaviour
 {
-    [SerializeField]private float velocidade, raioRC, distCentro;
+    [SerializeField]private float velocidadePadrao, raioRC, distCentro;
+    private float velocidade;
     public int index;
     [Range(0,2)]
     public float typeVel;
@@ -30,12 +31,13 @@ public class ShipBehaviour : MonoBehaviour
 
     void Update()
     {
-        if (typeVel == 0) velocidade = 2.8f;
-        else if (typeVel == 1) velocidade = (2.8f * 2f);
-        else if (typeVel == 2) velocidade = (2.8f / 2f);
+        if (typeVel == 0) velocidade = (velocidadePadrao + (UnityEngine.Camera.main.transform.position.x - this.transform.position.x) * 0.15f);
+        else if (typeVel == 1) velocidade = (velocidadePadrao * 2f);
+        else if (typeVel == 2) velocidade = (velocidadePadrao / 2f);
 
-        colididosFrente = Physics2D.RaycastAll(this.transform.position, Vector2.right, 0.5f, lm);
-        colidiuFrente = colididosFrente.Length > 1;
+
+        colididosFrente = Physics2D.RaycastAll(this.transform.position, Vector2.right, 0.6f, lm);
+        
         this.transform.GetChild(0).GetComponent<SpriteRenderer>().flipY = anguloRaycast;
         particula.localPosition = new Vector3(particula.localPosition.x, (anguloRaycast ? 0.12f : -0.12f), particula.localPosition.z);
         Movimento();

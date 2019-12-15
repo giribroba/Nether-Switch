@@ -19,9 +19,11 @@ public class GameController : MonoBehaviour
     private void Update()
     {
         rbCamera.velocity = new Vector3(velocidade, rbCamera.velocity.y);
+        Time.timeScale = 1.5f; 
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        Destroy(other.gameObject);
+        if(other.tag != "Obstaculo")
+            Destroy(other.gameObject);
     }
 }
