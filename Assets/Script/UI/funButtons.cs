@@ -43,7 +43,6 @@ public class funButtons : MonoBehaviour
 
     private void Start()
     {
-        index = 0;
         Canvas[0].SetActive(true);
         Canvas[1].SetActive(false);
     }
