@@ -8,12 +8,15 @@ public class GameController : MonoBehaviour
     private float velocidade;
     public static float quantidadeNavios;
     Rigidbody2D rbCamera;
+    UI fade;
     [SerializeField] GameObject[] navios;
     [SerializeField] GameObject gameOverScreen;
     public static Sprite SpriteVencedor { get; set; }
     bool podeJogar = false;
     private void Awake()
     {
+        fade = transform.GetComponent<UI>();
+        fade.Fades(true,1,1);
         TelaSelecao.teclasEscolhidas.Add(10, "A");
         rbCamera = GetComponent<Rigidbody2D>();
         for (int i = 0; i < navios.Length; i++)
