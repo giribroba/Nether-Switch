@@ -41,6 +41,7 @@ public class ShipBehaviour : MonoBehaviour
             _animator.SetBool("IndoPraBaixo", !anguloRaycast);
             anguloDireita = !anguloDireita;
         }
+        rbPlayer.velocity = new Vector3(velocidade, rbPlayer.velocity.y);
     }
     
     
