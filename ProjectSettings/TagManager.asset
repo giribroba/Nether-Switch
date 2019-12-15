@@ -7,6 +7,7 @@ TagManager:
   - Caixa
   - ciclone
   - altVel
+  - Obstaculo
   layers:
   - Default
   - TransparentFX

@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.tag != "Obstáculo")
+        if(other.tag != "Obstaculo")
             Destroy(other.gameObject);
     }
 }
