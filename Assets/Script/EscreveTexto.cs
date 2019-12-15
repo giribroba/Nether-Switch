@@ -21,6 +21,14 @@ public class EscreveTexto : MonoBehaviour
     {
         StartCoroutine("ApareceTexto");
     }
+	
+    private void Update()
+    {
+	if(Input.anyKeyDown)
+	{
+          SceneManager.LoadScene("GameTest");
+	}	
+    }
 
     public IEnumerator ApareceTexto()
     {
