@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class GameController : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         fade = transform.GetComponent<UI>();
-        fade.Fades(true,1,1);
+        fade.Fades(true,2,1);
         TelaSelecao.teclasEscolhidas.Add(10, "A");
         rbCamera = GetComponent<Rigidbody2D>();
         for (int i = 0; i < navios.Length; i++)
@@ -63,6 +64,8 @@ public class GameController : MonoBehaviour
     private void GameOver()
     {
         podeJogar = false;
+        TelaSelecao.ZeraTeclas();
+        TelaSelecao.teclasEscolhidas = new Dictionary<int, string>();
         gameOverScreen.SetActive(true);
     }
     private void OnTriggerExit2D(Collider2D other)

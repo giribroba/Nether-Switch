@@ -76,11 +76,17 @@ public class ShipBehaviour : MonoBehaviour
             _animator.SetBool("IndoPraBaixo", false);
             rbPlayer.velocity = new Vector3(rbPlayer.velocity.x, anguloDireita ? velocidade : -velocidade);
         }
-        if (Input.inputString.ToUpper() == botaoPrincipal && colidiu)
+        if (Input.inputString != "" && colidiu)
         {
-            anguloRaycast = !anguloRaycast;
-            //_animator.SetBool("IndoPraBaixo", );
-            anguloDireita = !anguloDireita;
+            foreach (var item in Input.inputString)
+            {
+                if (item.ToString().ToUpper() == botaoPrincipal)
+                {
+                    anguloRaycast = !anguloRaycast;
+                    //_animator.SetBool("IndoPraBaixo", );
+                    anguloDireita = !anguloDireita;
+                }
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
