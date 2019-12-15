@@ -8,18 +8,25 @@ public class funButtons : MonoBehaviour
     int index;
     [SerializeField] GameObject[] Canvas;
     [SerializeField] Animator anim;
-    [SerializeField] AudioSource somSelecao, somAmb;
+    [SerializeField] AudioSource somSelecao, somAmb, somTrans;
 
     public void IrSel()
     {
         index = 1;
-        SomSec();
+        Click();
         StartCoroutine(TransPraia(0));
     }
 
-    public void SomSec()
+    public void Click()
     {
-        somSelecao.Play();
+        somAmb.volume = 0.5f;
+        somTrans.Play();
+        Invoke("VolumeNormal", 1.8f);
+    }
+
+    void VolumeNormal()
+    {
+        somAmb.volume = 1f;
     }
 
     public void IrMenu()

@@ -19,15 +19,12 @@ public class TelaSelecao : MonoBehaviour
     {
         selecinouBut.Play();
     }
-    public void Click()
-    {
-        somAmbiente.Stop();
-        clickBut.Play();
-    }
 
     public void Game(string cena)
     {
         players = GameObject.FindGameObjectsWithTag("Caixa");
+
+  
         foreach (var i in players)
         {
             var temp = i.GetComponent<CaixaPlayer>();
@@ -53,7 +50,6 @@ public class TelaSelecao : MonoBehaviour
     }
     IEnumerator Esperar(string cena)
     {
-        Click();
         UI ui = this.GetComponent<UI>();
         tempo = 2;
         ui.Fades(false, tempo, Random.Range(0, 2));
