@@ -86,4 +86,8 @@ public class ShipBehaviour : MonoBehaviour
     {
         Gizmos.DrawWireSphere(transform.position + soma, raioRC);
     }
+    private void OnDestroy()
+    {
+        GameController.quantidadeNavios--;
+    }
 }
