@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
@@ -55,7 +56,21 @@ public class GameController : MonoBehaviour
         {
             StartCoroutine("PodeJogar");
         }
+
+        if (podeJogar && começoTela != null)
+        {
+            Destroy(começoTela);
+        }
+        else if(!podeJogar && começoTela != null)começoTela.SetActive(true);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine(começoTxt());
+        }
     }
+
+    public GameObject começoTela;
+    public Text txtComeçoTela;
     IEnumerator PodeJogar()
     {
         yield return new WaitForSeconds(3);
@@ -87,8 +102,20 @@ public class GameController : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+<<<<<<< HEAD
     void IrMenu()
     {
         SceneManager.LoadScene("Menu");
+=======
+
+    IEnumerator começoTxt()
+    {
+        txtComeçoTela.text = "3";
+        yield return new WaitForSeconds(1f);
+        txtComeçoTela.text = "2";
+        yield return new WaitForSeconds(1f);
+        txtComeçoTela.text = "1";
+
+>>>>>>> 53f8a75015a814684b72715fe41321a75156c6f9
     }
 }
