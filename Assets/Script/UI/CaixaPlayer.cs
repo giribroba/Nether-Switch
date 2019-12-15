@@ -9,7 +9,7 @@ public class CaixaPlayer : MonoBehaviour
     public int id;
     public Text txt_teclaEscolhida;
     public bool ativado = false;
-    private bool escolhendoTecla = false;
+    public bool escolhendoTecla = false;
     public static bool podeSelecionar = true;
 
     public static List<string> portaTeclas = new List<string>();

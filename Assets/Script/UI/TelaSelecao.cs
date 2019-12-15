@@ -43,9 +43,12 @@ public class TelaSelecao : MonoBehaviour
     {
         players = GameObject.FindGameObjectsWithTag("Caixa");
         CaixaPlayer.portaTeclas = new List<string>();
+        CaixaPlayer.podeSelecionar = true;
         foreach (var i in players)
         {
-            i.GetComponent<CaixaPlayer>().ativado = false;
+            var caixa = i.GetComponent<CaixaPlayer>();
+            caixa.ativado = false;
+            caixa.escolhendoTecla = false;
         }
     }
     IEnumerator Esperar(string cena)
