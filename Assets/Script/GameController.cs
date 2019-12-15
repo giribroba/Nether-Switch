@@ -11,4 +11,8 @@ public class GameController : MonoBehaviour
             navios[i].layer = 8;
         }
     }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Destroy(collision.gameObject);
+    }
 }

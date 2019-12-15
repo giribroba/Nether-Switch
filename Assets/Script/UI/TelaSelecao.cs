@@ -9,7 +9,13 @@ public class TelaSelecao : MonoBehaviour
     private static GameObject[] players;
     private float tempo;
     public static Dictionary<int, string> teclasEscolhidas = new Dictionary<int, string>();
+    private void Start()
+    {
+        if (true)
+        {
 
+        }
+    }
     public void Game(string cena)
     {
         players = GameObject.FindGameObjectsWithTag("Caixa");
