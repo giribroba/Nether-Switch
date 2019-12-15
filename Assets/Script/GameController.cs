@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
     [SerializeField] GameObject gameOverScreen;
     public static Sprite SpriteVencedor { get; set; }
     bool podeJogar = false;
+    [SerializeField] private AudioSource[] hits;
+
     private void Awake()
     {
         fade = transform.GetComponent<UI>();
@@ -71,7 +73,10 @@ public class GameController : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.tag != "Obstaculo")
+        if (other.tag != "Obstaculo")
+        {
             Destroy(other.gameObject);
+            //hits[Random.Range(0, 2)].Play();
+        }
     }
 }

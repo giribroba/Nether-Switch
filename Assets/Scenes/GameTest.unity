@@ -210,6 +210,10 @@ MonoBehaviour:
   - {fileID: 2100282285}
   - {fileID: 446004995}
   gameOverScreen: {fileID: 637785160}
+  hits:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!81 &116327959
 AudioListener:
   m_ObjectHideFlags: 0
@@ -8337,8 +8341,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1743639767279450519, guid: a3ec1b0745fc5c94491cb31049d4cf74,
         type: 3}
+      propertyPath: hits.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743639767279450519, guid: a3ec1b0745fc5c94491cb31049d4cf74,
+        type: 3}
       propertyPath: index
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743639767279450519, guid: a3ec1b0745fc5c94491cb31049d4cf74,
+        type: 3}
+      propertyPath: hits.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743639767279450519, guid: a3ec1b0745fc5c94491cb31049d4cf74,
+        type: 3}
+      propertyPath: hits.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743639767279450519, guid: a3ec1b0745fc5c94491cb31049d4cf74,
+        type: 3}
+      propertyPath: hits.Array.data[2]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3ec1b0745fc5c94491cb31049d4cf74, type: 3}
