@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour
             navios[i].layer = 8;
         }
     }
-
+    bool a = false;
     private void Update()
     {
         if (podeJogar)
@@ -52,8 +52,9 @@ public class GameController : MonoBehaviour
         {
             GameOver();
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !a)
         {
+            a = true;
             StartCoroutine("PodeJogar");
         }
 
