@@ -8,14 +8,23 @@ public class TelaSelecao : MonoBehaviour
 {
     private static GameObject[] players;
     private float tempo;
+    private bool parar;
     public static Dictionary<int, string> teclasEscolhidas = new Dictionary<int, string>();
+    [SerializeField] private AudioSource selecinouBut, clickBut, somAmbiente;
     private void Start()
     {
-        if (true)
-        {
-
-        }
     }
+
+    public void Selecionou()
+    {
+        selecinouBut.Play();
+    }
+    public void Click()
+    {
+        somAmbiente.Stop();
+        clickBut.Play();
+    }
+
     public void Game(string cena)
     {
         players = GameObject.FindGameObjectsWithTag("Caixa");
@@ -34,13 +43,17 @@ public class TelaSelecao : MonoBehaviour
     {
         players = GameObject.FindGameObjectsWithTag("Caixa");
         CaixaPlayer.portaTeclas = new List<string>();
+        CaixaPlayer.podeSelecionar = true;
         foreach (var i in players)
         {
-            i.GetComponent<CaixaPlayer>().ativado = false;
+            var caixa = i.GetComponent<CaixaPlayer>();
+            caixa.ativado = false;
+            caixa.escolhendoTecla = false;
         }
     }
     IEnumerator Esperar(string cena)
     {
+        Click();
         UI ui = this.GetComponent<UI>();
         tempo = 2;
         ui.Fades(false, tempo, Random.Range(0, 2));

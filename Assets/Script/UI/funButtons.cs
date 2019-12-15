@@ -5,14 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class funButtons : MonoBehaviour
 {
-    float index;
+    int index;
     [SerializeField] GameObject[] Canvas;
     [SerializeField] Animator anim;
+    [SerializeField] AudioSource somSelecao, somAmb;
 
     public void IrSel()
     {
         index = 1;
+        SomSec();
         StartCoroutine(TransPraia(0));
+    }
+
+    public void SomSec()
+    {
+        somSelecao.Play();
     }
 
     public void IrMenu()
@@ -46,7 +53,7 @@ public class funButtons : MonoBehaviour
         {
             case 0:
                     anim.SetBool("transPraiaF", true);
-                yield return new WaitForSeconds(1f);
+                    yield return new WaitForSeconds(1f);
                     anim.SetBool("transPraiaF", false);
                     Canvas[0].SetActive(false);
                     Canvas[1].SetActive(true);
@@ -61,7 +68,6 @@ public class funButtons : MonoBehaviour
                 Canvas[1].SetActive(false);
                 index = 0;
                 break;
-
         }
     }
 }
