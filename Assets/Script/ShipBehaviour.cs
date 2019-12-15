@@ -35,8 +35,9 @@ public class ShipBehaviour : MonoBehaviour
         else if (typeVel == 1) velocidade = (velocidadePadrao * 2f);
         else if (typeVel == 2) velocidade = (velocidadePadrao / 2f);
 
-        colididosFrente = Physics2D.RaycastAll(this.transform.position, Vector2.right, 0.5f, lm);
-        colidiuFrente = colididosFrente.Length > 1;
+
+        colididosFrente = Physics2D.RaycastAll(this.transform.position, Vector2.right, 0.6f, lm);
+        
         this.transform.GetChild(0).GetComponent<SpriteRenderer>().flipY = anguloRaycast;
         particula.localPosition = new Vector3(particula.localPosition.x, (anguloRaycast ? 0.12f : -0.12f), particula.localPosition.z);
         Movimento();

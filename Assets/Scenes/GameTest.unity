@@ -267,7 +267,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116327955}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.42, z: -10}
+  m_LocalPosition: {x: 0, y: 0.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2020330147}
@@ -6218,7 +6218,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 268001318}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: cf95e83faa6b13e4885b977c9d5184b0, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -7034,6 +7034,11 @@ PrefabInstance:
       propertyPath: index
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1743639767279450512, guid: a3ec1b0745fc5c94491cb31049d4cf74,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: cf95e83faa6b13e4885b977c9d5184b0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3ec1b0745fc5c94491cb31049d4cf74, type: 3}
 --- !u!1001 &2100282284
