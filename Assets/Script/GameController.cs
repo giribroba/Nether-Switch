@@ -61,9 +61,10 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(3);
         podeJogar = true;
     }
-    public void TrocarCena(string cena)
-    {
-        SceneManager.LoadScene(cena);
+    public void TrocarCena()
+    {   
+        fade.Fades(false,2,1);
+        Invoke("IrMenu",2);
 
     }
     void Venceu()
@@ -85,5 +86,9 @@ public class GameController : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+    }
+    void IrMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }
