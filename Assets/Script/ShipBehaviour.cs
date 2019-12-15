@@ -8,7 +8,8 @@ public class ShipBehaviour : MonoBehaviour
     public int index;
     private Animator _animator;
     private Rigidbody2D rbPlayer;
-    private bool anguloDireita, anguloRaycast, colidiu;
+    private bool anguloDireita, anguloRaycast, colidiu, colidiuFrente;
+    private RaycastHit2D[] colididosFrente;
     Collider2D[] colididos;
 
     private string botaoPrincipal;
@@ -25,6 +26,8 @@ public class ShipBehaviour : MonoBehaviour
 
     void Update()
     {
+        colididosFrente = Physics2D.RaycastAll(this.transform.position, Vector2.right, 0.5f, lm);
+        colidiuFrente = colididosFrente.Length > 1;
         this.transform.GetChild(0).GetComponent<SpriteRenderer>().flipY = anguloRaycast;
         Movimento();
         _animator.SetFloat("Velocidade", rbPlayer.velocity.y);
@@ -52,7 +55,7 @@ public class ShipBehaviour : MonoBehaviour
             //_animator.SetBool("IndoPraBaixo", );
             anguloDireita = !anguloDireita;
         }
-        rbPlayer.velocity = new Vector3(velocidade, rbPlayer.velocity.y);
+        rbPlayer.velocity = new Vector3((colidiuFrente? 0 : velocidade), rbPlayer.velocity.y);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
