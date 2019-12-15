@@ -9,6 +9,7 @@ TagManager:
   - altVel
   - Obstaculo
   - Shua
+  - EndStage
   layers:
   - Default
   - TransparentFX

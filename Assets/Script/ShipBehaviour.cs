@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShipBehaviour : MonoBehaviour
 {
     [SerializeField]private float velocidadePadrao, raioRC, distCentro;
+    UI ui;
     private float velocidade;
     public int index;
-    [Range(0,2)]
+    [Range(0,3)]
     public float typeVel;
     private Transform particula;
     private Animator _animator;
@@ -23,6 +25,8 @@ public class ShipBehaviour : MonoBehaviour
     bool podeJogar = false;
     void Start()
     {
+        ui = UnityEngine.Camera.main.GetComponent<UI>();
+        typeVel = 0;
         particula = transform.GetChild(0).GetChild(0);
         botaoPrincipal = TelaSelecao.teclasEscolhidas[index];
         rbPlayer = GetComponent<Rigidbody2D>();
@@ -34,8 +38,13 @@ public class ShipBehaviour : MonoBehaviour
         if (typeVel == 0) velocidade = (velocidadePadrao + (UnityEngine.Camera.main.transform.position.x - this.transform.position.x) * 0.15f);
         else if (typeVel == 1) velocidade = (velocidadePadrao * 2f);
         else if (typeVel == 2) velocidade = (velocidadePadrao / 2f);
+        else if (typeVel == 3) velocidade = (velocidade / 1.4f);
         colididosFrente = Physics2D.RaycastAll(this.transform.position, Vector2.right, 0.6f, lm);
         colidiu = colididosFrente.Length > 1;
+        if (typeVel == 3)
+        {
+            rbPlayer.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
+        }
         if (colidiu)
         {
             rbPlayer.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
@@ -91,10 +100,27 @@ public class ShipBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "ciclone")
+        switch (collision.tag)
         {
-            Destroy(gameObject);
+            case "ciclone":
+                Destroy(gameObject);
+                break;
+            case "EndStage":
+                GameController.podeJogar = false;
+                print(GameController.podeJogar);
+                typeVel = 3;
+                Invoke("FimEstagio", 2);
+                break;
         }
+    }
+    private void FimEstagio()
+    {
+        ui.Fades(false, 2, 2);
+        Invoke("LoadScene", 2);
+    }
+    private void LoadScene()
+    {
+        SceneManager.LoadScene("FimJogo");
     }
     IEnumerator PodeJogar()
     {
@@ -107,6 +133,7 @@ public class ShipBehaviour : MonoBehaviour
     }
     private void OnDestroy()
     {
+        GameController.hits[Random.Range(0, 2)].Play();
         GameController.quantidadeNavios--;
     }
 }

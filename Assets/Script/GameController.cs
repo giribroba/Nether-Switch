@@ -13,14 +13,17 @@ public class GameController : MonoBehaviour
     [SerializeField] GameObject[] navios;
     [SerializeField] GameObject gameOverScreen;
     public static Sprite SpriteVencedor { get; set; }
-    bool podeJogar = false;
-    [SerializeField] private AudioSource[] hits;
+    [SerializeField] AudioSource ambienteSom, vitoriaSom;
+    public static AudioSource[] hits;
+    [SerializeField] private AudioSource[] hitsClone;
+    public static bool podeJogar = false;
 
     private void Awake()
     {
+        hits = hitsClone;
         fade = transform.GetComponent<UI>();
         fade.Fades(true,2,1);
-        TelaSelecao.teclasEscolhidas.Add(10, "A");
+        TelaSelecao.teclasEscolhidas.Add(7, "A");
         rbCamera = GetComponent<Rigidbody2D>();
         for (int i = 0; i < navios.Length; i++)
         {
@@ -38,6 +41,10 @@ public class GameController : MonoBehaviour
         if (podeJogar)
         {
             rbCamera.velocity = new Vector3(velocidade, rbCamera.velocity.y);
+        }
+        else
+        {
+            rbCamera.velocity = Vector3.zero;
         }
         Time.timeScale = 1.5f; 
         if(quantidadeNavios <= 0)
@@ -66,6 +73,7 @@ public class GameController : MonoBehaviour
     }
     private void GameOver()
     {
+        ambienteSom.Stop();
         podeJogar = false;
         TelaSelecao.ZeraTeclas();
         TelaSelecao.teclasEscolhidas = new Dictionary<int, string>();
@@ -76,7 +84,6 @@ public class GameController : MonoBehaviour
         if (other.tag != "Obstaculo")
         {
             Destroy(other.gameObject);
-            //hits[Random.Range(0, 2)].Play();
         }
     }
 }

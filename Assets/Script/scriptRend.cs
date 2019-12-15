@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class scriptRend : MonoBehaviour
 {
+    [SerializeField]private AudioSource[] power;
     public enum Obs { 
         rendFora, rendDentro,
         velUp, velDown
@@ -35,11 +36,13 @@ public class scriptRend : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player" && (int) obsType == 2)
         {
+            power[0].Play();
             collision.gameObject.GetComponent<ShipBehaviour>().typeVel = 1;
             StartCoroutine(AjusteVelocidade(1));
         }
         else if(collision.gameObject.tag == "Player" && (int) obsType == 3)
         {
+            power[1].Play();
             collision.gameObject.GetComponent<ShipBehaviour>().typeVel = 2;
             StartCoroutine(AjusteVelocidade(0));
         }
