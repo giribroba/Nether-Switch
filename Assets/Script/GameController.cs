@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     [SerializeField] GameObject[] navios;
     private void Awake()
     {
+        TelaSelecao.teclasEscolhidas.Add(10, "A");
         rbCamera = GetComponent<Rigidbody2D>();
         for (int i = 0; i < navios.Length; i++)
         {

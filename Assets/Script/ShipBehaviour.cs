@@ -25,6 +25,7 @@ public class ShipBehaviour : MonoBehaviour
 
     void Update()
     {
+        this.transform.GetChild(0).GetComponent<SpriteRenderer>().flipY = anguloRaycast;
         Movimento();
         _animator.SetFloat("Velocidade", rbPlayer.velocity.y);
     }
