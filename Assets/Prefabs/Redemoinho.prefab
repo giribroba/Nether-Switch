@@ -125,6 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 657153257608318230}
   - component: {fileID: 6741115479694831746}
+  - component: {fileID: 7655250066302426830}
   m_Layer: 8
   m_Name: Redemoinho
   m_TagString: ciclone
@@ -174,6 +175,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8711777, y: 0.91201335}
   m_EdgeRadius: 0
+--- !u!114 &7655250066302426830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657153257608318229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e724f126fdebc4da9c58950d27491a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &657153257721508934
 GameObject:
   m_ObjectHideFlags: 0

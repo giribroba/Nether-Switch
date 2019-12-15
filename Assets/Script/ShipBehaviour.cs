@@ -53,8 +53,13 @@ public class ShipBehaviour : MonoBehaviour
         }
         rbPlayer.velocity = new Vector3(velocidade, rbPlayer.velocity.y);
     }
-    
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "ciclone")
+        {
+            Destroy(gameObject);
+        }
+    }
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position + soma, raioRC);
