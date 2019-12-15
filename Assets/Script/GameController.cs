@@ -54,6 +54,7 @@ public class GameController : MonoBehaviour
     public void TrocarCena(string cena)
     {
         SceneManager.LoadScene(cena);
+
     }
     void Venceu()
     {
