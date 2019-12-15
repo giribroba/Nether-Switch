@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FimJogo.unity
     guid: c7ae6de1aea18bc4482f5265dca6c41a
+  - enabled: 1
+    path: Assets/Scenes/FakeLoading.unity
+    guid: 4f07d75552d39d04f9c9d91554012572
   m_configObjects: {}
