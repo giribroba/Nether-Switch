@@ -857,6 +857,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Navio (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1743639767279450514, guid: a3ec1b0745fc5c94491cb31049d4cf74,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1743639767279450518, guid: a3ec1b0745fc5c94491cb31049d4cf74,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1012,11 +1017,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Teste
       objectReference: {fileID: 0}
-    - target: {fileID: 1743639767279450514, guid: a3ec1b0745fc5c94491cb31049d4cf74,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1743639767279450518, guid: a3ec1b0745fc5c94491cb31049d4cf74,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1071,11 +1071,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743639767279450519, guid: a3ec1b0745fc5c94491cb31049d4cf74,
-        type: 3}
-      propertyPath: index
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3ec1b0745fc5c94491cb31049d4cf74, type: 3}
@@ -2533,6 +2528,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Navio (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1743639767279450514, guid: a3ec1b0745fc5c94491cb31049d4cf74,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1743639767279450518, guid: a3ec1b0745fc5c94491cb31049d4cf74,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2792,6 +2792,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Navio (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743639767279450514, guid: a3ec1b0745fc5c94491cb31049d4cf74,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1743639767279450518, guid: a3ec1b0745fc5c94491cb31049d4cf74,
         type: 3}
@@ -4892,6 +4897,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Navio (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743639767279450514, guid: a3ec1b0745fc5c94491cb31049d4cf74,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1743639767279450518, guid: a3ec1b0745fc5c94491cb31049d4cf74,
         type: 3}
@@ -8251,6 +8261,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Navio (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1743639767279450514, guid: a3ec1b0745fc5c94491cb31049d4cf74,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1743639767279450518, guid: a3ec1b0745fc5c94491cb31049d4cf74,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8355,6 +8370,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Navio
       objectReference: {fileID: 0}
+    - target: {fileID: 1743639767279450514, guid: a3ec1b0745fc5c94491cb31049d4cf74,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1743639767279450518, guid: a3ec1b0745fc5c94491cb31049d4cf74,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8408,16 +8428,6 @@ PrefabInstance:
     - target: {fileID: 1743639767279450518, guid: a3ec1b0745fc5c94491cb31049d4cf74,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743639768038118058, guid: a3ec1b0745fc5c94491cb31049d4cf74,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1743639768038118058, guid: a3ec1b0745fc5c94491cb31049d4cf74,
-        type: 3}
-      propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
