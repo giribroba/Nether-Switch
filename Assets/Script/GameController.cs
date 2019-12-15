@@ -13,12 +13,17 @@ public class GameController : MonoBehaviour
     [SerializeField] GameObject[] navios;
     [SerializeField] GameObject gameOverScreen;
     public static Sprite SpriteVencedor { get; set; }
+    [SerializeField] AudioSource ambienteSom, vitoriaSom;
+    public static AudioSource[] hits;
+    [SerializeField] private AudioSource[] hitsClone;
     public static bool podeJogar = false;
+
     private void Awake()
     {
+        hits = hitsClone;
         fade = transform.GetComponent<UI>();
         fade.Fades(true,2,1);
-        TelaSelecao.teclasEscolhidas.Add(10, "A");
+        TelaSelecao.teclasEscolhidas.Add(7, "A");
         rbCamera = GetComponent<Rigidbody2D>();
         for (int i = 0; i < navios.Length; i++)
         {
@@ -59,6 +64,7 @@ public class GameController : MonoBehaviour
     public void TrocarCena(string cena)
     {
         SceneManager.LoadScene(cena);
+
     }
     void Venceu()
     {
@@ -67,6 +73,7 @@ public class GameController : MonoBehaviour
     }
     private void GameOver()
     {
+        ambienteSom.Stop();
         podeJogar = false;
         TelaSelecao.ZeraTeclas();
         TelaSelecao.teclasEscolhidas = new Dictionary<int, string>();
@@ -74,7 +81,9 @@ public class GameController : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.tag != "Obstaculo")
+        if (other.tag != "Obstaculo")
+        {
             Destroy(other.gameObject);
+        }
     }
 }

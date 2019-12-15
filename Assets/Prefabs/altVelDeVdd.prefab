@@ -152,6 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e1a7e03e5dad940bdcf590d77b618c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  power:
+  - {fileID: 0}
+  - {fileID: 0}
   obsType: 2
 --- !u!95 &5303971732888850153
 Animator:

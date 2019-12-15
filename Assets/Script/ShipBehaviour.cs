@@ -14,7 +14,7 @@ public class ShipBehaviour : MonoBehaviour
     private Transform particula;
     private Animator _animator;
     private Rigidbody2D rbPlayer;
-    private bool anguloDireita, anguloRaycast, colidiu, colidiuFrente;
+    private bool anguloDireita, anguloRaycast, colidiu, colidiuFrente, hitUV;
     private RaycastHit2D[] colididosFrente;
     Collider2D[] colididos;
     private string botaoPrincipal;
@@ -133,6 +133,7 @@ public class ShipBehaviour : MonoBehaviour
     }
     private void OnDestroy()
     {
+        GameController.hits[Random.Range(0, 2)].Play();
         GameController.quantidadeNavios--;
     }
 }
