@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
@@ -55,7 +56,21 @@ public class GameController : MonoBehaviour
         {
             StartCoroutine("PodeJogar");
         }
+
+        if (podeJogar && começoTela != null)
+        {
+            Destroy(começoTela);
+        }
+        else if(!podeJogar && começoTela != null)começoTela.SetActive(true);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine(começoTxt());
+        }
     }
+
+    public GameObject começoTela;
+    public Text txtComeçoTela;
     IEnumerator PodeJogar()
     {
         yield return new WaitForSeconds(3);
@@ -85,5 +100,15 @@ public class GameController : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+    }
+
+    IEnumerator começoTxt()
+    {
+        txtComeçoTela.text = "3";
+        yield return new WaitForSeconds(1f);
+        txtComeçoTela.text = "2";
+        yield return new WaitForSeconds(1f);
+        txtComeçoTela.text = "1";
+
     }
 }
