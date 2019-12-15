@@ -16,6 +16,12 @@ public class CaixaPlayer : MonoBehaviour
     void Start()
     {
         txt_teclaEscolhida = obj_teclaEscolhida.transform.GetChild(0).GetComponent<Text>();
+        if (id == 0)
+        {
+            ativado = true;
+            escolhendoTecla = true;
+            podeSelecionar = false;
+        }
     }
 
     void Update()
@@ -71,7 +77,6 @@ public class CaixaPlayer : MonoBehaviour
 
     public void Ativar()
     {
-        print(podeSelecionar);
         if (podeSelecionar)
         {
             if (!ativado)

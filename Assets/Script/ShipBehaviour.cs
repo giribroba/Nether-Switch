@@ -26,19 +26,29 @@ public class ShipBehaviour : MonoBehaviour
     void Update()
     {
         Movimento();
+        _animator.SetFloat("Velocidade", rbPlayer.velocity.y);
     }
     private void Movimento()
     {
         soma.y = (anguloRaycast) ? distCentro : -distCentro;
         colididos = Physics2D.OverlapCircleAll(transform.position + soma, raioRC, lm);
         colidiu = colididos.Length > 1;
-        _animator.SetBool("EncontrouParede", colidiu);
-        rbPlayer.velocity = new Vector3(rbPlayer.velocity.x , anguloDireita ? velocidade : -velocidade);
+        if (colidiu)
+        {
+            _animator.SetBool("IndoPraBaixo", true);
+            rbPlayer.velocity = new Vector3(rbPlayer.velocity.x, 0);
+        }
+        else
+        {
+            _animator.SetBool("IndoPraBaixo", false);
+            rbPlayer.velocity = new Vector3(rbPlayer.velocity.x , anguloDireita ? velocidade : -velocidade);
+        }
+       
         if (Input.inputString.ToUpper() == botaoPrincipal && colidiu)
         {
-            _animator.SetTrigger("ApertouZ");
+            
             anguloRaycast = !anguloRaycast;
-            _animator.SetBool("IndoPraBaixo", !anguloRaycast);
+            //_animator.SetBool("IndoPraBaixo", );
             anguloDireita = !anguloDireita;
         }
         rbPlayer.velocity = new Vector3(velocidade, rbPlayer.velocity.y);
