@@ -77,9 +77,10 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(3);
         podeJogar = true;
     }
-    public void TrocarCena(string cena)
-    {
-        SceneManager.LoadScene(cena);
+    public void TrocarCena()
+    {   
+        fade.Fades(false,2,1);
+        Invoke("IrMenu",2);
 
     }
     void Venceu()
@@ -102,6 +103,11 @@ public class GameController : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+<<<<<<< HEAD
+    void IrMenu()
+    {
+        SceneManager.LoadScene("Menu");
+=======
 
     IEnumerator começoTxt()
     {
@@ -111,5 +117,6 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         txtComeçoTela.text = "1";
 
+>>>>>>> 53f8a75015a814684b72715fe41321a75156c6f9
     }
 }
