@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657153256632391323}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6635518, y: 0.28318462, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 657153257608318230}
@@ -124,8 +124,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 657153257608318230}
-  - component: {fileID: 6741115479694831746}
   - component: {fileID: 7655250066302426830}
+  - component: {fileID: 4442133860921747087}
   m_Layer: 8
   m_Name: Redemoinho
   m_TagString: ciclone
@@ -141,7 +141,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657153257608318229}
   m_LocalRotation: {x: -0, y: -0, z: 0.99986327, w: -0.01653596}
-  m_LocalPosition: {x: 10.86, y: -1.92, z: 0.27229}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.6824, y: 2.6824, z: 2.6824}
   m_Children:
   - {fileID: 657153257721508935}
@@ -149,32 +149,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -538.105}
---- !u!61 &6741115479694831746
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 657153257608318229}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 2.6512136, y: 0.26559058}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.8711777, y: 0.91201335}
-  m_EdgeRadius: 0
 --- !u!114 &7655250066302426830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,6 +161,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38e724f126fdebc4da9c58950d27491a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &4442133860921747087
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657153257608318229}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.4
 --- !u!1 &657153257721508934
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,7 +204,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657153257721508934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6635292, y: 0.2831714, z: -0.9999998}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 657153257608318230}
