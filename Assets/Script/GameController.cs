@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
     [SerializeField] GameObject[] navios;
     [SerializeField] GameObject gameOverScreen;
     public static Sprite SpriteVencedor { get; set; }
-    bool podeJogar = false;
+    public static bool podeJogar = false;
     private void Awake()
     {
         fade = transform.GetComponent<UI>();
@@ -36,6 +36,10 @@ public class GameController : MonoBehaviour
         if (podeJogar)
         {
             rbCamera.velocity = new Vector3(velocidade, rbCamera.velocity.y);
+        }
+        else
+        {
+            rbCamera.velocity = Vector3.zero;
         }
         Time.timeScale = 1.5f; 
         if(quantidadeNavios <= 0)
