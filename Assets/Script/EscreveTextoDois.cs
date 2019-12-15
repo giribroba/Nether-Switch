@@ -37,6 +37,11 @@ public class EscreveTextoDois : MonoBehaviour
             }
             yield return new WaitForSeconds(1f);
         }
+        Invoke("ChamarMenu", 1f);
+    }
+
+    void ChamarMenu() {
+
         SceneManager.LoadScene("Menu");
     }
 }

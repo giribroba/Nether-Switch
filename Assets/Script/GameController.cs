@@ -102,12 +102,10 @@ public class GameController : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
-<<<<<<< HEAD
     void IrMenu()
     {
         SceneManager.LoadScene("Menu");
-=======
-
+    }
     IEnumerator começoTxt()
     {
         txtComeçoTela.text = "3";
@@ -115,7 +113,5 @@ public class GameController : MonoBehaviour
         txtComeçoTela.text = "2";
         yield return new WaitForSeconds(1f);
         txtComeçoTela.text = "1";
-
->>>>>>> 53f8a75015a814684b72715fe41321a75156c6f9
     }
 }

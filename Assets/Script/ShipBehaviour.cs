@@ -109,6 +109,7 @@ public class ShipBehaviour : MonoBehaviour
                 GameController.podeJogar = false;
                 print(GameController.podeJogar);
                 typeVel = 3;
+                ui.Fades(false, 2, 1);
                 Invoke("FimEstagio", 2);
                 break;
         }
