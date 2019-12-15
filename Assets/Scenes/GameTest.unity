@@ -209,7 +209,7 @@ MonoBehaviour:
   - {fileID: 878901136}
   - {fileID: 2100282285}
   - {fileID: 446004995}
-  gameOverScreen: {fileID: 2020265335}
+  gameOverScreen: {fileID: 637785160}
 --- !u!81 &116327959
 AudioListener:
   m_ObjectHideFlags: 0
@@ -295,7 +295,7 @@ MonoBehaviour:
   - {fileID: 1283942624906729137, guid: 8bf4e7636222e17429a05491957a6c66, type: 3}
   - {fileID: 818328014522740145, guid: 1c71f858057a91b4592590681658c178, type: 3}
   - {fileID: 3702822967664261044, guid: bba99a7e568ea4a478653ce076fb1064, type: 3}
-  canvas: {fileID: 0}
+  canvas: {fileID: 2020265338}
 --- !u!1 &150609526
 GameObject:
   m_ObjectHideFlags: 0
@@ -7682,7 +7682,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &637785161
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10699,7 +10699,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2020265336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10896,7 +10896,7 @@ PrefabInstance:
     - target: {fileID: 1743639767279450514, guid: a3ec1b0745fc5c94491cb31049d4cf74,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1743639767279450518, guid: a3ec1b0745fc5c94491cb31049d4cf74,
         type: 3}
