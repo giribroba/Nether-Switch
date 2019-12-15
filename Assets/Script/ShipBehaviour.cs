@@ -15,13 +15,13 @@ public class ShipBehaviour : MonoBehaviour
     private bool anguloDireita, anguloRaycast, colidiu, colidiuFrente;
     private RaycastHit2D[] colididosFrente;
     Collider2D[] colididos;
-
     private string botaoPrincipal;
     [SerializeField] private LayerMask lm;
     private Vector3 soma;
     private Ray r;
-    void Start()
 
+    bool podeJogar = false;
+    void Start()
     {
         particula = transform.GetChild(0).GetChild(0);
         botaoPrincipal = TelaSelecao.teclasEscolhidas[index];
@@ -44,14 +44,25 @@ public class ShipBehaviour : MonoBehaviour
         {
             rbPlayer.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
-        
         this.transform.GetChild(0).GetComponent<SpriteRenderer>().flipY = anguloRaycast;
         particula.localPosition = new Vector3(particula.localPosition.x, (anguloRaycast ? 0.12f : -0.12f), particula.localPosition.z);
         Movimento();
         _animator.SetFloat("Velocidade", rbPlayer.velocity.y);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine("PodeJogar");
+        }
+        if (GameController.quantidadeNavios == 1)
+        {
+            GameController.SpriteVencedor = this.gameObject.GetComponent<Sprite>();
+        }
     }
     private void Movimento()
     {
+        if (podeJogar)
+        {
+            rbPlayer.velocity = new Vector3((colidiuFrente ? 0 : velocidade), rbPlayer.velocity.y);
+        }
         soma.y = (anguloRaycast) ? distCentro : -distCentro;
         colididos = Physics2D.OverlapCircleAll(transform.position + soma, raioRC, lm);
         colidiu = colididos.Length > 1;
@@ -63,17 +74,14 @@ public class ShipBehaviour : MonoBehaviour
         else
         {
             _animator.SetBool("IndoPraBaixo", false);
-            rbPlayer.velocity = new Vector3(rbPlayer.velocity.x , anguloDireita ? velocidade : -velocidade);
+            rbPlayer.velocity = new Vector3(rbPlayer.velocity.x, anguloDireita ? velocidade : -velocidade);
         }
-       
         if (Input.inputString.ToUpper() == botaoPrincipal && colidiu)
         {
-            
             anguloRaycast = !anguloRaycast;
             //_animator.SetBool("IndoPraBaixo", );
             anguloDireita = !anguloDireita;
         }
-        rbPlayer.velocity = new Vector3((colidiuFrente? 0 : velocidade), rbPlayer.velocity.y);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -81,6 +89,11 @@ public class ShipBehaviour : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    IEnumerator PodeJogar()
+    {
+        yield return new WaitForSeconds(3);
+        podeJogar = true;
     }
     private void OnDrawGizmos()
     {
