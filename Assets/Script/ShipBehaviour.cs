@@ -6,6 +6,7 @@ public class ShipBehaviour : MonoBehaviour
 {
     [SerializeField]private float velocidade, raioRC, distCentro;
     public int index;
+    private Transform particula;
     private Animator _animator;
     private Rigidbody2D rbPlayer;
     private bool anguloDireita, anguloRaycast, colidiu, colidiuFrente;
@@ -19,6 +20,7 @@ public class ShipBehaviour : MonoBehaviour
     void Start()
 
     {
+        particula = transform.GetChild(0).GetChild(0);
         botaoPrincipal = TelaSelecao.teclasEscolhidas[index];
         rbPlayer = GetComponent<Rigidbody2D>();
         _animator = transform.GetChild(0).GetComponent<Animator>();
@@ -29,6 +31,7 @@ public class ShipBehaviour : MonoBehaviour
         colididosFrente = Physics2D.RaycastAll(this.transform.position, Vector2.right, 0.5f, lm);
         colidiuFrente = colididosFrente.Length > 1;
         this.transform.GetChild(0).GetComponent<SpriteRenderer>().flipY = anguloRaycast;
+        particula.localPosition = new Vector3(particula.localPosition.x, (anguloRaycast ? 0.12f : -0.12f), particula.localPosition.z);
         Movimento();
         _animator.SetFloat("Velocidade", rbPlayer.velocity.y);
     }
