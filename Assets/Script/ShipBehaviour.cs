@@ -6,6 +6,8 @@ public class ShipBehaviour : MonoBehaviour
 {
     [SerializeField]private float velocidade, raioRC, distCentro;
     public int index;
+    [Range(0,2)]
+    public float typeVel;
     private Transform particula;
     private Animator _animator;
     private Rigidbody2D rbPlayer;
@@ -28,6 +30,10 @@ public class ShipBehaviour : MonoBehaviour
 
     void Update()
     {
+        if (typeVel == 0) velocidade = 2.8f;
+        else if (typeVel == 1) velocidade = (2.8f * 2f);
+        else if (typeVel == 2) velocidade = (2.8f / 2f);
+
         colididosFrente = Physics2D.RaycastAll(this.transform.position, Vector2.right, 0.5f, lm);
         colidiuFrente = colididosFrente.Length > 1;
         this.transform.GetChild(0).GetComponent<SpriteRenderer>().flipY = anguloRaycast;

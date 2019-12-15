@@ -32,5 +32,7 @@ public class UI : MonoBehaviour
        if (seconds != 0)
          fade.GetComponent<Animator>().SetFloat("Seconds", 1 /seconds);
     }
-    
+
+    public static bool per;
+   
 }

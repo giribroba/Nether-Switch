@@ -44,6 +44,7 @@ public class TelaSelecao : MonoBehaviour
         UI ui = this.GetComponent<UI>();
         tempo = 2;
         ui.Fades(false, tempo, Random.Range(0, 2));
+        UI.per = true;
         yield return new WaitForSeconds(tempo);
         SceneManager.LoadScene(cena);
     }
