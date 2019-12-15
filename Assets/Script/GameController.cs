@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour
     private void Awake()
     {
         fade = transform.GetComponent<UI>();
-        fade.Fades(true,1,Random.Range(0,2));
+        fade.Fades(true,1,1);
         TelaSelecao.teclasEscolhidas.Add(10, "A");
         rbCamera = GetComponent<Rigidbody2D>();
         for (int i = 0; i < navios.Length; i++)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EscreveTexto : MonoBehaviour
 {
@@ -30,7 +31,8 @@ public class EscreveTexto : MonoBehaviour
                 this.GetComponent<Text>().text = textoAtual;
                 yield return new WaitForSeconds(intervalo);
             }
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1f);
         }
+        SceneManager.LoadScene("GameTest");
     }
 }
