@@ -23,15 +23,13 @@ public class TelaSelecao : MonoBehaviour
     public void Game(string cena)
     {
         players = GameObject.FindGameObjectsWithTag("Caixa");
-
-  
         foreach (var i in players)
         {
             var temp = i.GetComponent<CaixaPlayer>();
             if (temp.ativado && temp.txt_teclaEscolhida.text != "...")
                 teclasEscolhidas.Add(temp.id, temp.txt_teclaEscolhida.text);
         }
-        if (!(teclasEscolhidas.Count == 0))
+        if ((teclasEscolhidas.Count != 0))
         {
             StartCoroutine("Esperar", cena);
         }

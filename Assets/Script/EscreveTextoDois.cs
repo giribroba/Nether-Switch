@@ -41,6 +41,8 @@ public class EscreveTextoDois : MonoBehaviour
     }
     void ChamaMenu()
     {
+        TelaSelecao.ZeraTeclas();
+        TelaSelecao.teclasEscolhidas = new Dictionary<int, string>();
         SceneManager.LoadScene("Menu");
     }
 }

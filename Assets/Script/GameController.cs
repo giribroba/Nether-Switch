@@ -18,13 +18,17 @@ public class GameController : MonoBehaviour
     public static AudioSource[] hits;
     [SerializeField] private AudioSource[] hitsClone;
     public static bool podeJogar = false;
+    private bool reiniciar;
 
     private void Awake()
     {
+        SetActiveNavios();
+    }
+    public void SetActiveNavios()
+    {
         hits = hitsClone;
         fade = transform.GetComponent<UI>();
-        fade.Fades(true,2,1);
-        TelaSelecao.teclasEscolhidas.Add(7, "A");
+        fade.Fades(true, 2, 1);
         rbCamera = GetComponent<Rigidbody2D>();
         for (int i = 0; i < navios.Length; i++)
         {
@@ -77,11 +81,19 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(3);
         podeJogar = true;
     }
-    public void TrocarCena()
+    public void ReiniciarPressionado()
+    {
+        podeJogar = false;
+        a = false;
+        reiniciar = true;
+    }
+
+    public void MenuPressionado()
     {   
         fade.Fades(false,2,1);
+        TelaSelecao.ZeraTeclas();
+        TelaSelecao.teclasEscolhidas = new Dictionary<int, string>();
         Invoke("IrMenu",2);
-
     }
     void Venceu()
     {
@@ -92,8 +104,6 @@ public class GameController : MonoBehaviour
     {
         ambienteSom.Stop();
         podeJogar = false;
-        TelaSelecao.ZeraTeclas();
-        TelaSelecao.teclasEscolhidas = new Dictionary<int, string>();
         gameOverScreen.SetActive(true);
     }
     private void OnTriggerExit2D(Collider2D other)

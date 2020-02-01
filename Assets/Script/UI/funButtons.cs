@@ -32,6 +32,7 @@ public class funButtons : MonoBehaviour
     public void IrMenu()
     {
         TelaSelecao.ZeraTeclas();
+        TelaSelecao.teclasEscolhidas = new Dictionary<int, string>();
         index = 0;
         StartCoroutine(TransPraia(1));
     }
